@@ -1,10 +1,10 @@
-package tetris.api.Tertris.Rest.Api;
+package tetris.rest.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TertrisRestApiApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {
