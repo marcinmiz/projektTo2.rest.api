@@ -6,7 +6,7 @@ import java.sql.Time;
 @Entity
 public class Game {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @ManyToOne
     private User user;
@@ -81,6 +81,7 @@ public class Game {
     public void setScoreLines(Integer scoreLines) {
         this.scoreLines = scoreLines;
     }
+
     public MultiplayerGame getMultiplayerGame() {
         return multiplayerGame;
     }

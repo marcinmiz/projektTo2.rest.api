@@ -1,4 +1,5 @@
 package tetris.rest.api.controller;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import tetris.rest.api.data.UserRepository;
 import tetris.rest.api.model.entity.User;
 
 import javax.servlet.http.HttpServletResponse;
+
 @RestController
 @RequestMapping("api/users")
 public class UserRestController {
@@ -16,7 +18,7 @@ public class UserRestController {
     private UserRepository userRepository;
 
     @RequestMapping
-    public List<User> getUsers(HttpServletResponse response){
+    public List<User> getUsers(HttpServletResponse response) {
         return (List<User>) userRepository.findAll();
     }
 }

@@ -7,7 +7,7 @@ import java.security.Timestamp;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String username;
     private String password;
@@ -18,25 +18,8 @@ public class User {
     @OneToOne
     private SecurityQuestion question2;
 
-    public String getAnswer1() {
-        return answer1;
-    }
-
-    public void setAnswer1(String answer1) {
-        this.answer1 = answer1;
-    }
-
-    public String getAnswer2() {
-        return answer2;
-    }
-
-    public void setAnswer2(String answer2) {
-        this.answer2 = answer2;
-    }
-
     private String answer1;
     private String answer2;
-
 
 
     public Integer getRankingsPoints() {
@@ -98,5 +81,22 @@ public class User {
     public void setName(String username) {
         this.username = username;
     }
+
+    public String getAnswer1() {
+        return answer1;
+    }
+
+    public void setAnswer1(String answer1) {
+        this.answer1 = answer1;
+    }
+
+    public String getAnswer2() {
+        return answer2;
+    }
+
+    public void setAnswer2(String answer2) {
+        this.answer2 = answer2;
+    }
+
 
 }
