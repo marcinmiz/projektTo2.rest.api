@@ -78,9 +78,6 @@ public class User {
         return username;
     }
 
-    public void setName(String username) {
-        this.username = username;
-    }
 
     public String getAnswer1() {
         return answer1;
