@@ -2,8 +2,11 @@
 Projekt na Technologie Obietkowe 
 
 Ustawienia bazy danych:
+
 Plik znajduję się w main/java/resources/application.properties
+
 Plik jest ustawiony na Mysql szczęgólnie na Xampa, nie trzeba używać akurat Xampa wtedy trzeba zmieniać dialect czyli:
+
 spring.jpa.database-platform=org.hibernate.dialect.MariaDB10Dialect 
 
 na który będzie kompatybilny z bazą
