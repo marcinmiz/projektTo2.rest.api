@@ -11,8 +11,11 @@ spring.jpa.database-platform=org.hibernate.dialect.MariaDB10Dialect
 
 na który będzie kompatybilny z bazą
 Oraz tutaj trzeba ustawić nazwe baze danych i użytkownika:
+
 spring.datasource.url=jdbc:mysql://localhost:3306/db_tetris?useSSL=false&serverTimezone=UTC
+
 spring.datasource.username=root
+
 spring.datasource.password=
 
 db_tetris = nazwa bazy danych
