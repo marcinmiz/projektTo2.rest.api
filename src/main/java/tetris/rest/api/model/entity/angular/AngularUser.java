@@ -2,13 +2,13 @@ package tetris.rest.api.model.entity.angular;
 
 import tetris.rest.api.model.entity.SecurityQuestion;
 import tetris.rest.api.model.entity.User;
-import java.security.Timestamp;
+import java.util.Date;
 
 public class AngularUser {
     private int id;
     private String username;
     private Integer rankingsPoints;
-    private Timestamp created_At;
+    private Date created_At;
     private SecurityQuestion question1;
     private SecurityQuestion question2;
     private String answer1;
@@ -55,11 +55,11 @@ public class AngularUser {
         this.rankingsPoints = rankingsPoints;
     }
 
-    public Timestamp getCreated_At() {
+    public Date getCreated_At() {
         return created_At;
     }
 
-    public void setCreated_At(Timestamp created_At) {
+    public void setCreated_At(Date created_At) {
         this.created_At = created_At;
     }
 

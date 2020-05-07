@@ -3,6 +3,8 @@ package tetris.rest.api.model.entity;
 
 import javax.persistence.*;
 import java.security.Timestamp;
+import java.sql.Time;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -12,7 +14,9 @@ public class User {
     private String username;
     private String password;
     private Integer rankingsPoints;
-    private Timestamp created_At;
+    @Basic
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created_At;
     @OneToOne
     private SecurityQuestion question1;
     @OneToOne
@@ -42,11 +46,11 @@ public class User {
         this.rankingsPoints = rankingsPoints;
     }
 
-    public Timestamp getCreated_At() {
+    public Date getCreated_At() {
         return created_At;
     }
 
-    public void setCreated_At(Timestamp created_At) {
+    public void setCreated_At(Date created_At) {
         this.created_At = created_At;
     }
 

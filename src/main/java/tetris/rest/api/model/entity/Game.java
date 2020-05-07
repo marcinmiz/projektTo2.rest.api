@@ -2,6 +2,7 @@ package tetris.rest.api.model.entity;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.util.Date;
 
 @Entity
 public class Game {
@@ -12,7 +13,9 @@ public class Game {
     private User user;
     @ManyToOne
     private MultiplayerGame multiplayerGame;
-    private Time date;
+    @Basic
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date date;
     private Integer score;
     private Integer scoreLines;
     private Integer level;
@@ -34,11 +37,11 @@ public class Game {
         this.gameTime = gameTime;
     }
 
-    public Time getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Time date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
