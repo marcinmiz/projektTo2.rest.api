@@ -15,7 +15,7 @@ public class FriendRelationController {
     private FriendRelationRepository friendRelationRepository;
 
     @GetMapping
-    public List<FriendRelation> getAllGames(){
+    public List<FriendRelation> getAllFriendRelations(){
         return (List<FriendRelation>) friendRelationRepository.findAll();
     }
     @GetMapping("/{id}")

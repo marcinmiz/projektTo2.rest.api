@@ -32,7 +32,8 @@ public class GameRestController {
     }
     @PostMapping
     public Game addNewGame(@RequestBody Game newGame){
-            return gameRepository.save(newGame);
+        newGame.setId((int) gameRepository.count());
+        return gameRepository.save(newGame);
     }
 }
 
