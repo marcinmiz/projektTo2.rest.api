@@ -12,6 +12,8 @@ import tetris.rest.api.model.entity.angular.AngularUser;
 
 import javax.servlet.http.HttpServletResponse;
 
+import static java.util.stream.Collectors.toList;
+
 @RestController
 @RequestMapping("api/users")
 public class UserRestController {
@@ -30,21 +32,18 @@ public class UserRestController {
 
     @GetMapping("/getfriends/{id}")
     public List<AngularUser> getAllFriends(@PathVariable("id") Integer id) {
-        List<AngularUser> list = new ArrayList<>();
-//        userRepository.findAll().forEach(user -> list.add(new AngularUser(user)));
-        List<FriendRelation> list2 = new ArrayList<>();
-        friendRelationRepository.findAll().forEach(list2::add);
+        List<FriendRelation> listRelations = new ArrayList<>();
+        friendRelationRepository.findAllBySenderUser(userRepository.findById(id).get()).forEach(listRelations::add);
+        friendRelationRepository.findAllByReceiverUser(userRepository.findById(id).get()).forEach(listRelations::add);
+        List<AngularUser> users = listRelations.stream().filter(p -> p.getStatus().equals("Accepted")).map( p -> {
+            Integer idReceiver = p.getReceiverUser().getId();
+            if(!idReceiver.equals(id))
+               return  new AngularUser(userRepository.findById(p.getReceiverUser().getId()).get());
+            return new AngularUser(userRepository.findById(p.getSenderUser().getId()).get());
+         }
+        ).collect(toList());
 
-        list2.stream().filter(p -> p.getReceiverUser().getId().equals(id) || p.getSenderUser().getId().equals(id));
-        for (FriendRelation friendRelation: list2){
-            if (!friendRelation.getReceiverUser().getId().equals(id)){
-                list.add(new AngularUser(userRepository.findById(friendRelation.getReceiverUser().getId()).get()));
-            }
-            if (!friendRelation.getReceiverUser().getId().equals(id)){
-                list.add(new AngularUser(userRepository.findById(friendRelation.getSenderUser().getId()).get()));
-            }
-        }
-        return list;
+        return users;
     }
 
     @GetMapping("/{id}")
