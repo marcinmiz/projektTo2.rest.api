@@ -15,7 +15,7 @@ public class FriendRelationController {
     private FriendRelationRepository friendRelationRepository;
 
     @GetMapping
-    public List<FriendRelation> getAllGames(){
+    public List<FriendRelation> getAllFriendRelations(){
         return (List<FriendRelation>) friendRelationRepository.findAll();
     }
     @GetMapping("/{id}")
@@ -23,13 +23,13 @@ public class FriendRelationController {
         return friendRelationRepository.findById(id).get();
     }
     @PutMapping
-    public FriendRelation updateGame(@RequestBody FriendRelation updatedFriendRelation){
+    public FriendRelation updateFriendRelation(@RequestBody FriendRelation updatedFriendRelation){
         FriendRelation originalFriendRelation = friendRelationRepository.findById(updatedFriendRelation.getId()).get();
         originalFriendRelation.setStatus(updatedFriendRelation.getStatus());
         return originalFriendRelation;
     }
     @PostMapping
-    public FriendRelation addNewGame(@RequestBody FriendRelation newFriendRelation){
+    public FriendRelation addNewFriendRelation(@RequestBody FriendRelation newFriendRelation){
         return friendRelationRepository.save(newFriendRelation);
     }
 }

@@ -12,6 +12,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String username;
+    private String login;
     private String password;
     private Integer rankingsPoints;
     @Basic
@@ -21,6 +22,8 @@ public class User {
     private SecurityQuestion question1;
     @OneToOne
     private SecurityQuestion question2;
+
+
 
     private String answer1;
     private String answer2;
@@ -99,5 +102,12 @@ public class User {
         this.answer2 = answer2;
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
 }

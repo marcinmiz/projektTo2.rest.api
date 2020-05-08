@@ -7,6 +7,7 @@ import java.util.Date;
 public class AngularUser {
     private int id;
     private String username;
+    private String login;
     private Integer rankingsPoints;
     private Date created_At;
     private SecurityQuestion question1;
@@ -21,6 +22,7 @@ public class AngularUser {
     public AngularUser(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
+        this.login = user.getLogin();
         this.rankingsPoints = user.getRankingsPoints();
         this.created_At = user.getCreated_At();
         this.question1 = user.getQuestion1();
