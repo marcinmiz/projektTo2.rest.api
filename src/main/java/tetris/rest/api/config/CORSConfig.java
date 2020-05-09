@@ -12,6 +12,6 @@ public class CORSConfig implements WebMvcConfigurer {
     String origin = "http://localhost:4200";
     registry.addMapping("/api/**")
       .allowedMethods("GET", "POST", "PUT", "DELETE")
-      .allowedOrigins(origin);
+        .allowedOrigins(origin);
   }
 }
