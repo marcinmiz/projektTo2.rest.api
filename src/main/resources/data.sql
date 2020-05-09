@@ -1,6 +1,6 @@
 INSERT IGNORE INTO security_question (id,question) VALUES (0,'What is your favourite place?');
 INSERT IGNORE INTO security_question (id,question) VALUES (1,'What is your favourite animal?');
-INSERT IGNORE INTO security_question (id,question) VALUES (2,'What is your favourite actor?');
+INSERT IGNORE INTO security_question (id,question) VALUES (2,'What is your favourite dictator?');
 INSERT IGNORE INTO security_question (id,question) VALUES (3,'What is your favourite movie?');
 INSERT IGNORE INTO user (id, answer1, answer2, created_at, password, rankings_points, username, question1_id, question2_id) VALUES (0, 'whale', 'The Hunger Games', '2020-03-20 20:25', 'saj3do$a', 7342, 'mike23', 1, 3);
 INSERT IGNORE INTO user (id, answer1, answer2, created_at, password, rankings_points, username, question1_id, question2_id) VALUES (1, 'Capri', 'crocodile', '2020-03-20 16:08', 'ois5hefi#', 8129, 'tomHouston', 0, 1);
@@ -29,13 +29,23 @@ INSERT IGNORE INTO multiplayer_game (id, bet, number_of_players, winner_id) VALU
  INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (11, '2020-03-23', '19:00:55', 12, 1448, 146, 1, 2);
  INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (12, '2020-03-23', '19:00:55', 14, 1711, 187, 1, 3);
  INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (13, '2020-03-23', '19:00:55', 18, 4915, 285, 1, 4);
-
  INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (14, '2020-03-24', '11:15:47', 22, 7915, 368, 0, 0);
  INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (15, '2020-03-24', '11:15:47', 21, 7687, 345, 0, 1);
  INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (16, '2020-03-25', '15:32:25', 26, 16841, 438, 1, 2);
  INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (17, '2020-03-25', '15:32:25', 24, 12647, 402, 1, 3);
  INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (18, '2020-03-26', '17:50:00', 35, 32874, 854, 1, 4);
  INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (19, '2020-03-26', '17:50:00', 45, 54497, 1504, 1, 0);
+ INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (20, '2020-03-27', '12:04:34', 30, 27843, 688, NULL, 0);
+ INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (21, '2020-03-28', '17:50:00', 37, 35599, 1000, NULL, 0);
+ INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (22, '2020-03-29', '17:50:00', 25, 14465, 420, NULL, 2);
+ INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (23, '2020-05-09', '20:35:00', 14, 1645, 175, NULL, 5);
+
+ INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (24, '2020-04-12', '19:00:55', 18, 4915, 285, NULL, 5);
+ INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (25, '2020-04-15', '11:15:47', 22, 7915, 368, NULL, 2);
+ INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (26, '2020-04-20', '11:15:47', 21, 7687, 345, NULL, 3);
+ INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (27, '2020-05-02', '15:32:25', 26, 16841, 438, NULL, 0);
+ INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (28, '2020-05-04', '18:02:05', 24, 12647, 402, NULL, 4);
+ INSERT IGNORE INTO game (id, date, game_time, level, score, score_lines, multiplayer_game_id, user_id) VALUES (29, '2020-05-07', '17:50:00', 35, 32874, 854, NULL, 1);
 
  INSERT IGNORE INTO friend_relation (id, status, receiver_user_id, sender_user_id) VALUES (0, 'Accepted', 1, 0);
  INSERT IGNORE INTO friend_relation (id, status, receiver_user_id, sender_user_id) VALUES (1, 'Accepted', 2, 0);

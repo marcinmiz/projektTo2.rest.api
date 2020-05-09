@@ -50,6 +50,9 @@ public class UserRestController {
             return new AngularUser(userRepository.findById(id).get());
     }
 
+//    @GetMapping
+//    public
+
     @PutMapping
     public AngularUser updateUser(@RequestBody AngularUser updatedUser) {
         User originalUser = userRepository.findById(updatedUser.getId()).get();
@@ -61,5 +64,6 @@ public class UserRestController {
     public AngularUser newUser(@RequestBody User user){
             return new AngularUser(userRepository.save(user));
     }
+
 
 }
